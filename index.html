@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year's Gift Jar 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        h1 {
+            color: white;
+            font-size: clamp(1.5em, 6vw, 2.5em);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: titlePulse 2s ease-in-out infinite;
+            line-height: 1.2;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            color: #f0f0f0;
+            font-size: clamp(0.9em, 4vw, 1.2em);
+            margin-bottom: 20px;
+        }
+
+        .jar-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .jar {
+            position: relative;
+            width: min(280px, 80vw);
+            height: min(320px, 60vh);
+            margin: 0 auto 20px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(200,220,255,0.3));
+            border: 3px solid #8b9dc3;
+            border-radius: 15px 15px 30px 30px;
+            overflow: hidden;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+        }
+
+        .jar.scooping {
+            animation: jarShake 0.5s ease-in-out;
+        }
+
+        @keyframes jarShake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        .jar::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(100px, 35%);
+            height: 20px;
+            background: #8b9dc3;
+            border-radius: 8px 8px 0 0;
+            z-index: 10;
+        }
+
+        .emoji-pool {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 15px;
+            gap: 6px;
+        }
+
+        .emoji-pool span {
+            font-size: clamp(1.3em, 5vw, 2em);
+            animation: float 3s ease-in-out infinite;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .emoji-pool span:nth-child(2n) {
+            animation-delay: 0.3s;
+        }
+
+        .emoji-pool span:nth-child(3n) {
+            animation-delay: 0.6s;
+        }
+
+        .emoji-pool span:nth-child(4n) {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+        }
+
+        .flying-emoji {
+            position: fixed;
+            font-size: 3em;
+            pointer-events: none;
+            z-index: 1000;
+            animation: flyOut 1.5s ease-out forwards;
+        }
+
+        @keyframes flyOut {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(1.5) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .scoop-spoon {
+            position: absolute;
+            font-size: 4em;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            opacity: 0;
+            z-index: 100;
+        }
+
+        .scoop-spoon.scooping {
+            animation: scoopAnimation 2s ease-in-out;
+        }
+
+        @keyframes scoopAnimation {
+            0% {
+                top: -100px;
+                opacity: 0;
+                transform: translateX(-50%) rotate(0deg);
+            }
+            30% {
+                top: 150px;
+                opacity: 1;
+                transform: translateX(-50%) rotate(-20deg);
+            }
+            50% {
+                top: 180px;
+                transform: translateX(-50%) rotate(-30deg);
+            }
+            70% {
+                top: 150px;
+                transform: translateX(-50%) rotate(20deg);
+            }
+            100% {
+                top: -100px;
+                opacity: 0;
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        .scoop-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: clamp(1em, 4.5vw, 1.3em);
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            width: auto;
+            max-width: 90%;
+        }
+
+        .scoop-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .scoop-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .scoop-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.5);
+        }
+
+        .scoop-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .scooped-emojis {
+            display: none;
+            margin-top: 20px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .scooped-emojis.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scooped-title {
+            font-size: clamp(1.1em, 5vw, 1.5em);
+            color: #333;
+            margin-bottom: 15px;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .emoji-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            animation: cardAppear 0.5s ease-out backwards;
+        }
+
+        .emoji-card:nth-child(1) { animation-delay: 0.1s; }
+        .emoji-card:nth-child(2) { animation-delay: 0.2s; }
+        .emoji-card:nth-child(3) { animation-delay: 0.3s; }
+        .emoji-card:nth-child(4) { animation-delay: 0.4s; }
+        .emoji-card:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: scale(0) rotate(180deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .emoji-card:hover {
+            transform: scale(1.1) rotate(5deg);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .emoji-card.opened {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            animation: cardFlip 0.6s ease-out;
+        }
+
+        @keyframes cardFlip {
+            0% { transform: rotateY(0deg); }
+            50% { transform: rotateY(90deg); }
+            100% { transform: rotateY(0deg); }
+        }
+
+        .emoji-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: iconBounce 1s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .emoji-card:hover .emoji-icon {
+            animation: iconSpin 0.5s ease-in-out;
+        }
+
+        @keyframes iconSpin {
+            from { transform: rotate(0deg) scale(1); }
+            to { transform: rotate(360deg) scale(1.2); }
+        }
+
+        .emoji-label {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .gift-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .gift-modal.active {
+            display: flex;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-100px) scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2em;
+            cursor: pointer;
+            color: #666;
+            background: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #f5576c;
+            transform: rotate(90deg) scale(1.2);
+        }
+
+        .modal-emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: modalEmojiPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes modalEmojiPop {
+            0% { transform: scale(0) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(180deg); }
+            100% { transform: scale(1) rotate(360deg); }
+        }
+
+        .modal-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .modal-message {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            z-index: 999;
+            animation: confettiFall 3s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎊 Happy New Year 2025! 🎊</h1>
+        <p class="subtitle">Scoop your special gifts from the jar!</p>
+        
+        <div class="jar-container">
+            <div class="scoop-spoon" id="scoopSpoon">🥄</div>
+            <div class="jar" id="jar">
+                <div class="emoji-pool" id="emojiPool"></div>
+            </div>
+            
+            <button class="scoop-btn" id="scoopBtn" onclick="scoopEmojis()">
+                <span style="position: relative; z-index: 1;">🥄 Scoop Your Gifts!</span>
+            </button>
+            
+            <div class="scooped-emojis" id="scoopedEmojis">
+                <div class="scooped-title">✨ Your Special Gifts ✨</div>
+                <div class="emoji-grid" id="emojiGrid"></div>
+                <button class="reset-btn" onclick="reset()">🔄 Scoop Again!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="gift-modal" id="giftModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div class="modal-emoji" id="modalEmoji"></div>
+            <div class="modal-title" id="modalTitle"></div>
+            <div class="modal-message" id="modalMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        const gifts = [
+            {
+                emoji: '💌',
+                title: 'Message for you',
+                message: 'Devi Ji , as you step into 2026.. A gentle reminder , mai hmesha pareshan karta rahunga aur side by side sare doubts bhi solve karta rahunga  💕'
+            },
+            {
+                emoji: '📸',
+                title: 'Memory',
+                message: 'Bhai wo call yaad hai, jispr inta hasi thiii . Mujhse ek numerical solve nahi hua uspr itnaaaa hasi thi aur record kr lia tha maineee 😭😭'
+            },
+            {
+                emoji: '⭐',
+                title: 'What I Appreciate About You',
+                message: 'Fir wahi list nikalne ki baat ho rahi ab toh, kitna hi bolo wahi same-same chizein bore ho jaogii 😭, just stay as you aree.. ✨'
+            },
+            {
+                emoji: '🎯',
+                title: '2026 Goal',
+                message: 'Maybe thora sa neend 👉👈, but haa pehlse se kafi better hai.. Sahi track par chal rahi ..  Mast raho Swasth raho aur lecture karti rahoo 🚀'
+            },
+            {
+                emoji: '🌟',
+                title: '2026 Prediction',
+                message: 'I predict that 2026 will be an amazingggg year! Good good hoga sab , pdhai ka stress bdhega but you will handle it like a champp 🎉'
+            },
+            {
+                emoji: '💭',
+                title: 'Andar ki Baat',
+                message: 'Are bhai kya batau .. Did not realize ye khushi ki baat itni badi ho jayegiii.. iss secret ko apne tak hi rakhe kisi aur ko pata chl gaya toh khushi khushi kar ke sb paagal kardenge mujeee 😭😭'
+            },
+            {
+                emoji: '🎁',
+                title: 'Special Coupon',
+                message: 'This coupon entitles you to another year of subscription to my FRIENDSHIP, my free Motivational GYAAN and loads of smilesss .. Dekh lo bhai jhel sako toh jhel lena  🎟️'
+            },
+            {
+                emoji: '🌈',
+                title: 'Sunshine Reminder',
+                message: 'Samajh nahi aa raha tha ki aapko kya remind krwau fir yad aagya.. Harman ho bhaii uske aage kuch bolne ki zarurat hi nahi padti (jab bhi tough lage to yad krna is baat ko ) 💪'
+            },
+            {
+                emoji: '🎵',
+                title: 'Song that represents you',
+                message: 'Isme thora unsure hu kyuki bahut wide personality hai aapki, ig Patakha Guddi 🎶 or STFU 💀 '
+            },
+            {
+                emoji: '✨',
+                title: 'A Wish for You',
+                message: 'My wish for you in 2026: May your smile never fade, may you move close towards your dreams, healthy rahoo, ice cream + pepsi as it chalta rahe , khoob mazee kroo 🌟'
+            }
+        ];
+
+        // Decorative emojis that don't represent gifts
+        const decorativeEmojis = ['🎨', '🌺', '🦋', '🍀', '💫', '🔮', '🎭', '🌸', '🍓', '🌙', 
+                                   '☀️', '🌻', '🐚', '🎪', '🎨', '🌷', '🦄', '🎀', '💎', '🍒',
+                                   '🌼', '🎯', '🔥', '💝', '🎈', '🌿', '🍑', '🧁', '🍰'];
+
+        let allEmojis = [];
+        let selectedGifts = [];
+
+        function initJar() {
+            allEmojis = [];
+            
+            // Add gift emojis
+            gifts.forEach(gift => {
+                for (let i = 0; i < 3; i++) {
+                    allEmojis.push(gift.emoji);
+                }
+            });
+            
+            // Add decorative emojis
+            for (let i = 0; i < 25; i++) {
+                allEmojis.push(decorativeEmojis[Math.floor(Math.random() * decorativeEmojis.length)]);
+            }
+            
+            allEmojis = shuffleArray(allEmojis);
+            
+            const pool = document.getElementById('emojiPool');
+            pool.innerHTML = allEmojis.map(emoji => `<span>${emoji}</span>`).join('');
+        }
+
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function createFlyingEmoji(emoji, startX, startY) {
+            const flyingEmoji = document.createElement('div');
+            flyingEmoji.className = 'flying-emoji';
+            flyingEmoji.textContent = emoji;
+            flyingEmoji.style.left = startX + 'px';
+            flyingEmoji.style.top = startY + 'px';
+            
+            const tx = (Math.random() - 0.5) * 400;
+            const ty = -200 - Math.random() * 200;
+            flyingEmoji.style.setProperty('--tx', tx + 'px');
+            flyingEmoji.style.setProperty('--ty', ty + 'px');
+            
+            document.body.appendChild(flyingEmoji);
+            
+            setTimeout(() => flyingEmoji.remove(), 1500);
+        }
+
+        function createConfetti() {
+            const colors = ['#f093fb', '#f5576c', '#667eea', '#764ba2', '#ffd700', '#ff6b6b'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * window.innerWidth + 'px';
+                    confetti.style.top = '-10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 30);
+            }
+        }
+
+        async function scoopEmojis() {
+            const jar = document.getElementById('jar');
+            const spoon = document.getElementById('scoopSpoon');
+            const btn = document.getElementById('scoopBtn');
+            
+            btn.disabled = true;
+            jar.classList.add('scooping');
+            spoon.classList.add('scooping');
+            
+            // Create flying emojis effect
+            const jarRect = jar.getBoundingClientRect();
+            const centerX = jarRect.left + jarRect.width / 2;
+            const centerY = jarRect.top + jarRect.height / 2;
+            
+            setTimeout(() => {
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(() => {
+                        const randomEmoji = allEmojis[Math.floor(Math.random() * allEmojis.length)];
+                        createFlyingEmoji(randomEmoji, centerX, centerY);
+                    }, i * 100);
+                }
+            }, 800);
+            
+            // Select gifts
+            selectedGifts = shuffleArray(gifts).slice(0, 5);
+            
+            setTimeout(() => {
+                createConfetti();
+                jar.classList.remove('scooping');
+                spoon.classList.remove('scooping');
+                document.getElementById('scoopedEmojis').classList.add('active');
+                
+                const grid = document.getElementById('emojiGrid');
+                grid.innerHTML = selectedGifts.map((gift, index) => `
+                    <div class="emoji-card" onclick="openGift(${gifts.indexOf(gift)})" data-index="${index}">
+                        <div class="emoji-icon">${gift.emoji}</div>
+                        <div class="emoji-label">Gift ${index + 1}</div>
+                    </div>
+                `).join('');
+            }, 2000);
+        }
+
+        function openGift(giftIndex) {
+            const gift = gifts[giftIndex];
+            document.getElementById('modalEmoji').textContent = gift.emoji;
+            document.getElementById('modalTitle').textContent = gift.title;
+            document.getElementById('modalMessage').textContent = gift.message;
+            document.getElementById('giftModal').classList.add('active');
+            
+            event.currentTarget.classList.add('opened');
+        }
+
+        function closeModal() {
+            document.getElementById('giftModal').classList.remove('active');
+        }
+
+        function reset() {
+            document.getElementById('scoopBtn').disabled = false;
+            document.getElementById('scoopedEmojis').classList.remove('active');
+            initJar();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('giftModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        initJar();
+    </script>
+</body>
+</html>
